@@ -8,9 +8,9 @@
     "node": ">=22.22.3"
   },
   "scripts": {
-    "dev": "astro dev",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/css/tailwind.css --watch"
     "start": "astro dev",
-    "build": "astro build",
+    "build": "echo 'No build step required'",
     "preview": "astro preview",
     "astro": "astro",
     "check": "npm run check:astro && npm run check:eslint && npm run check:prettier",
