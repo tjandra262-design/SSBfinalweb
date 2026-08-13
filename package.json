@@ -8,7 +8,7 @@
     "node": ">=22.22.3"
   },
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/css/tailwind.css --watch"
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./src/css/tailwind.css --watch",
     "start": "astro dev",
     "build": "echo 'No build step required'",
     "preview": "astro preview",
