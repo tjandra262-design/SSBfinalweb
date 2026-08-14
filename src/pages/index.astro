@@ -1,412 +1,413 @@
----
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
 import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
-const metadata = {
-  title: 'PT Surya Satu Bersama — Lighting & Technology Solutions',
-  description:
-    'PT Surya Satu Bersama provides integrated lighting, technology, IT, IoT, software, distribution and energy solutions through Aruna and Unisolve.',
-  ignoreTitleTemplate: true,
-};
----
-
 <Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
 
-  <!-- ========================================================= -->
-  <!-- HERO -->
-  <!-- ========================================================= -->
+<Hero
+actions={[
+{
+variant: 'primary',
+text: 'Get template',
+href: 'https://github.com/arthelokyo/astrowind',
+target: '_blank',
+icon: 'tabler',
+},
+{ text: 'Learn more', href: '#features' },
+]}
+image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
 
-  <Hero
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Explore Our Solutions',
-        href: '#solutions',
-      },
-      {
-        text: 'Contact Us',
-        href: '#contact',
-      },
-    ]}
-    image={{
-      src: '~/assets/images/hero-image.png',
-      alt: 'Surya Satu Bersama Solutions',
-    }}
+
+
+<Fragment slot="title">
+
+  Free template for <span class="hidden xl:inline">creating websites with</span>
+  <span class="text-accent dark:text-white"> Astro v7</span> + Tailwind CSS
+</Fragment>
+
+<Fragment slot="subtitle">
+  <span class="hidden sm:inline">
+    <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro v7 +
+    Tailwind CSS v4.</span
   >
-    <Fragment slot="title">
-      Building a
-      <span class="text-accent dark:text-white">
-        Brighter & Smarter
-      </span>
-      Future
-    </Fragment>
+  <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
+  Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages & Blogs.
+</Fragment>
 
-    <Fragment slot="subtitle">
-      <span class="font-semibold">PT Surya Satu Bersama</span>
-      delivers integrated solutions across lighting, technology,
-      IT, IoT, software, distribution and energy.
-    </Fragment>
   </Hero>
 
+  <!-- Note Widget ******************* -->
 
-  <!-- ========================================================= -->
-  <!-- ABOUT -->
-  <!-- ========================================================= -->
+  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
 
-  <Content
-    isReversed
-    tagline="PT SURYA SATU BERSAMA"
-    title="Solutions that connect light, technology and opportunity."
-    items={[
-      {
-        title: 'Integrated Solutions',
-        description:
-          'We bring together products, technology and practical solutions to address the evolving needs of businesses, institutions and communities.',
-      },
-      {
-        title: 'Two Specialized Brands',
-        description:
-          'Aruna focuses on lighting solutions, while Unisolve delivers technology, IT, IoT, software, distribution and energy solutions.',
-      },
-      {
-        title: 'Built for Real Applications',
-        description:
-          'Our approach combines reliable products with practical implementation, creating solutions designed for real-world environments.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2070&q=80',
-      alt: 'Modern business environment',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        One company. Multiple capabilities.
-      </h3>
+  <!-- Features Widget *************** -->
 
-      <p>
-        PT Surya Satu Bersama is built around a simple idea:
-        combining dependable products with technology and practical
-        solutions to create long-term value.
-      </p>
-    </Fragment>
+<Features
+id="features"
+tagline="Features"
+title="What you get with AstroWind"
+subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023, 2024 and 2025."
+items={[
+{
+title: 'Astro + Tailwind CSS Integration',
+description:
+'A seamless integration between two great frameworks that offer high productivity, performance and versatility. Now powered by Tailwind CSS v4.',
+icon: 'tabler',
+},
+{
+title: 'Ready-to-use Components',
+description:
+'Widgets made with Tailwind CSS v4 ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+icon: 'tabler',
+},
+{
+title: 'Best Practices',
+description:
+'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
+icon: 'tabler',
+},
+{
+title: 'Excellent Page Speed',
+description:
+'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+icon: 'tabler',
+},
+{
+title: 'Search Engine Optimization (SEO)',
+description:
+"SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
+icon: 'tabler',
+},
+{
+title: 'Open to new ideas and contributions',
+description:
+'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
+icon: 'tabler',
+},
+]}
+/>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+  <!-- Content Widget **************** -->
+
+<Content
+isReversed
+tagline="Inside template"
+title="AstroWind's Blueprint: Fun Meets Functionality!"
+items={[
+{
+title: 'Built on top of Astro v7',
+description:
+'Benefiting from the performance and developer-friendly features of this modern static site generator.',
+},
+{
+title: 'Styled using Tailwind CSS v4',
+description:
+'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
+},
+{
+title: 'Cross-browser compatibility',
+description:
+'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
+},
+]}
+image={{
+src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+alt: 'Colorful Image',
+}}
+
+
+
+<Fragment slot="content">
+
+  <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
+  Gain a competitive advantage by incorporating industry leading practices
+</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+
   </Content>
 
+  <!-- Content Widget **************** -->
 
-  <!-- ========================================================= -->
-  <!-- OUR BRANDS -->
-  <!-- ========================================================= -->
+<Content
+isAfterContent
+items={[
+{
+title: 'High level of customization',
+description: Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.,
+},
+{
+title: 'Multiple layout possibilities',
+description:
+'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
+},
+{
+title: 'Fully responsive design',
+description:
+"Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+},
+{
+title: 'Integration of media',
+description:
+'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
+},
+]}
+image={{
+src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
+alt: 'Blueprint Image',
+}}
 
-  <Features
-    id="brands"
-    tagline="OUR BRANDS"
-    title="Two brands. One integrated vision."
-    subtitle="Our brands focus on different areas while working together to deliver broader solutions."
-    items={[
-      {
-        title: 'ARUNA',
-        description:
-          'Lighting solutions for indoor and outdoor environments, designed to deliver reliable illumination, efficiency and practical value.',
-        icon: 'tabler:bulb',
-      },
-      {
-        title: 'UNISOLVE',
-        description:
-          'Technology and digital solutions covering IT infrastructure, IoT, software, technology distribution and energy solutions.',
-        icon: 'tabler:device-desktop',
-      },
-    ]}
-  />
 
 
-  <!-- ========================================================= -->
-  <!-- ARUNA -->
-  <!-- ========================================================= -->
+<Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
 
-  <Content
-    isAfterContent
-    tagline="ARUNA"
-    title="Lighting solutions for a brighter environment."
-    items={[
-      {
-        title: 'Indoor Lighting',
-        description:
-          'Lighting solutions for offices, commercial spaces, residential environments and institutional applications.',
-      },
-      {
-        title: 'Outdoor Lighting',
-        description:
-          'Solutions for streets, public areas, facilities, commercial environments and outdoor applications.',
-      },
-      {
-        title: 'Practical & Efficient',
-        description:
-          'Products designed with attention to performance, reliability, energy efficiency and application requirements.',
-      },
-      {
-        title: 'Made for Real Needs',
-        description:
-          'Aruna focuses on delivering lighting products and solutions that are practical, scalable and adaptable.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=2194&q=80',
-      alt: 'Modern interior lighting',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        ARUNA — Lighting
-      </h3>
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
 
-      <p>
-        From indoor spaces to outdoor environments, Aruna is focused
-        on creating lighting solutions that combine performance,
-        functionality and visual comfort.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
   </Content>
 
+  <!-- Content Widget **************** -->
 
-  <!-- ========================================================= -->
-  <!-- UNISOLVE -->
-  <!-- ========================================================= -->
+<Content
+isReversed
+isAfterContent
+items={[
+{
+title: 'Enhanced user engagement',
+description:
+'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
+},
+{
+title: 'Continuous improvement',
+description:
+'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
+},
+{
+title: 'Time and resource efficiency',
+description:
+'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
+},
+{
+title: 'Community support',
+description: Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.,
+},
+]}
+image={{
+src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+alt: 'Astronauts Image',
+}}
 
-  <Content
-    isReversed
-    isAfterContent
-    tagline="UNISOLVE"
-    title="Technology that solves real business challenges."
-    items={[
-      {
-        title: 'IT Infrastructure',
-        description:
-          'Infrastructure solutions designed to support reliable, secure and scalable business operations.',
-      },
-      {
-        title: 'IoT',
-        description:
-          'Connected devices and IoT solutions that help organizations monitor, manage and optimize operations.',
-      },
-      {
-        title: 'Software',
-        description:
-          'Software and digital solutions designed around operational requirements and business workflows.',
-      },
-      {
-        title: 'Energy & Distribution',
-        description:
-          'Technology distribution and energy-related solutions supporting modern business and infrastructure needs.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=2070&q=80',
-      alt: 'Technology and digital infrastructure',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        UNISOLVE — Technology
-      </h3>
 
-      <p>
-        Unisolve brings technology, IT infrastructure, IoT, software,
-        distribution and energy capabilities together to help
-        organizations operate smarter.
-      </p>
-    </Fragment>
 
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
+<Fragment slot="content">Designed to foster growth and success.</Fragment>
+
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+
   </Content>
 
+  <!-- Steps Widget ****************** -->
 
-  <!-- ========================================================= -->
-  <!-- SOLUTIONS -->
-  <!-- ========================================================= -->
+<Steps
+title="Get your dream website up and running in no time with AstroWind."
+items={[
+{
+title: 'Step 1: <span class="font-medium">Download</span>',
+description:
+"Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
+icon: 'tabler',
+},
+{
+title: 'Step 2: <span class="font-medium">Add content</span>',
+description:
+"Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
+icon: 'tabler',
+},
+{
+title: 'Step 3: <span class="font-medium">Customize styles</span>',
+description:
+'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
+icon: 'tabler',
+},
+{
+title: 'Ready!',
+icon: 'tabler',
+},
+]}
+image={{
+src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+alt: 'Steps image',
+}}
+/>
 
-  <Features
-    id="solutions"
-    tagline="OUR SOLUTIONS"
-    title="Capabilities designed around your needs."
-    subtitle="From physical infrastructure to digital transformation, our solutions can be combined to address different environments and business requirements."
-    items={[
-      {
-        title: 'Lighting Solutions',
-        description:
-          'Indoor and outdoor lighting solutions through Aruna for commercial, institutional, residential and public applications.',
-        icon: 'tabler:bulb',
-      },
-      {
-        title: 'IT Infrastructure',
-        description:
-          'Technology infrastructure supporting connectivity, computing, systems and business operations.',
-        icon: 'tabler:server',
-      },
-      {
-        title: 'IoT Solutions',
-        description:
-          'Connected systems that provide visibility, monitoring and smarter control of operational environments.',
-        icon: 'tabler:antenna',
-      },
-      {
-        title: 'Software',
-        description:
-          'Digital solutions that help businesses improve processes, information flow and operational efficiency.',
-        icon: 'tabler:code',
-      },
-      {
-        title: 'Energy',
-        description:
-          'Technology and energy solutions supporting more efficient and modern infrastructure.',
-        icon: 'tabler:bolt',
-      },
-      {
-        title: 'Distribution',
-        description:
-          'Technology product distribution supporting partners, businesses and project requirements.',
-        icon: 'tabler:truck-delivery',
-      },
-    ]}
-  />
+  <!-- Features2 Widget ************** -->
 
-
-  <!-- ========================================================= -->
-  <!-- WHY SSB -->
-  <!-- ========================================================= -->
-
-  <Content
-    isAfterContent
-    tagline="WHY SSB"
-    title="From products to solutions."
-    items={[
-      {
-        title: 'Multi-Disciplinary',
-        description:
-          'Lighting and technology capabilities under one company create opportunities for integrated solutions.',
-      },
-      {
-        title: 'Application Focused',
-        description:
-          'We focus on understanding the actual requirement before selecting products and technologies.',
-      },
-      {
-        title: 'Flexible',
-        description:
-          'Our capabilities can support individual product requirements as well as broader solution projects.',
-      },
-      {
-        title: 'Long-Term Partnership',
-        description:
-          'We aim to build sustainable relationships with customers, partners and technology providers.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=2070&q=80',
-      alt: 'Business collaboration',
-    }}
-  >
-    <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
-        More than a product supplier.
-      </h3>
-
-      <p>
-        We believe the best solutions start with understanding
-        the problem. Our role is to connect products, technology
-        and implementation into something that creates measurable value.
-      </p>
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
+<Features2
+title="Most used widgets"
+subtitle="Provides frequently used components for building websites using Tailwind CSS v4"
+tagline="Components"
+items={[
+{
+title: 'Headers',
+description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
+icon: 'flat-color-icons',
+},
+{
+title: 'Heros',
+description:
+"Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
+icon: 'flat-color-icons',
+},
+{
+title: 'Features',
+description:
+'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
+icon: 'flat-color-icons',
+},
+{
+title: 'Content',
+description:
+"Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
+icon: 'flat-color-icons',
+},
+{
+title: 'Call-to-Action',
+description:
+'That enthusiastic friend who's always urging, "Do it! Do it!"? Yeah, that's this button nudging you towards adventure.',
+icon: 'flat-color-icons',
+},
+{
+title: 'Pricing',
+description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
+icon: 'flat-color-icons',
+},
+{
+title: 'Testimonial',
+description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
+icon: 'flat-color-icons',
+},
+{
+title: 'Contact',
+description:
+'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
+icon: 'flat-color-icons',
+},
+{
+title: 'Footers',
+description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
+icon: 'flat-color-icons',
+},
+]}
 
 
-  <!-- ========================================================= -->
-  <!-- FAQ -->
-  <!-- ========================================================= -->
 
-  <FAQs
-    id="faq"
-    title="Frequently Asked Questions"
-    subtitle="A few things you may want to know about PT Surya Satu Bersama and our brands."
-    tagline="FAQ"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'What is PT Surya Satu Bersama?',
-        description:
-          'PT Surya Satu Bersama is a company providing solutions across lighting and technology. Our brands include Aruna for lighting and Unisolve for technology-related solutions.',
-      },
-      {
-        title: 'What is Aruna?',
-        description:
-          'Aruna is the lighting brand of PT Surya Satu Bersama, focusing on indoor and outdoor lighting solutions.',
-      },
-      {
-        title: 'What is Unisolve?',
-        description:
-          'Unisolve is the technology brand of PT Surya Satu Bersama, covering IT, IoT, software, technology distribution and energy solutions.',
-      },
-      {
-        title: 'Can SSB handle customized projects?',
-        description:
-          'Our capabilities allow us to support different project requirements. Contact our team to discuss your specific application and requirements.',
-      },
-      {
-        title: 'Can Aruna and Unisolve solutions be combined?',
-        description:
-          'Yes. Because both brands operate under PT Surya Satu Bersama, lighting and technology capabilities can be considered together for suitable projects.',
-      },
-      {
-        title: 'How can I contact SSB?',
-        description:
-          'You can contact PT Surya Satu Bersama through the contact information provided on this website. Our team will help direct your inquiry to the appropriate solution area.',
-      },
-    ]}
-  />
+<Fragment slot="bg">
+
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+
+  </Features2>
+
+  <!-- HighlightedPosts Widget ******* -->
+
+<BlogLatestPosts
+title="Find out more content in our Blog"
+information={The blog is used to display AstroWind documentation.
+                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro v7 + Tailwind CSS v4.
+                        Astro is a very interesting technology. Thanks.
+                }
+/>
+
+  <!-- FAQs Widget ******************* -->
+
+<FAQs
+title="Frequently Asked Questions"
+subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
+tagline="FAQs"
+classes={{ container: 'max-w-6xl' }}
+items={[
+{
+title: 'Why AstroWind?',
+description:
+"Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
+},
+{
+title: 'What do I need to start?',
+description:
+'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
+},
+{
+title: 'How to install the Astro + Tailwind CSS template?',
+description:
+"Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
+},
+{
+title: "What's something that you don't understand?",
+description:
+"A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
+},
+{
+title: 'What is something that you would like to try again?',
+description:
+"A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
+},
+{
+title: 'If you could only ask one question to each person you meet, what would that question be?',
+description:
+"This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
+},
+]}
+/>
+
+  <!-- Stats Widget ****************** -->
+
+<Stats
+stats={[
+{ title: 'Downloads', amount: '132K' },
+{ title: 'Stars', amount: '24.8K' },
+{ title: 'Forks', amount: '10.3K' },
+{ title: 'Users', amount: '48.4K' },
+]}
+/>
+
+  <!-- CallToAction Widget *********** -->
+
+<CallToAction
+actions={[
+{
+variant: 'primary',
+text: 'Get template',
+href: 'https://github.com/arthelokyo/astrowind',
+target: '_blank',
+icon: 'tabler',
+},
+]}
 
 
-  <!-- ========================================================= -->
-  <!-- CONTACT CTA -->
-  <!-- ========================================================= -->
 
-  <CallToAction
-    id="contact"
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Contact Us',
-        href: 'mailto:info@suryasatubersama.com',
-        icon: 'tabler:mail',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Let's build something
-      <span class="sm:whitespace-nowrap">better together.</span>
-    </Fragment>
+<Fragment slot="title">
 
-    <Fragment slot="subtitle">
-      Talk to PT Surya Satu Bersama about your lighting,
-      technology or integrated solution requirements.
-    </Fragment>
+  Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
+</Fragment>
+
+<Fragment slot="subtitle">
+  Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
+  waste more time! :P
+</Fragment>
+
   </CallToAction>
-
 </Layout>
