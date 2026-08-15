@@ -1,3 +1,4 @@
+---
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
@@ -11,7 +12,13 @@ import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
 
+const metadata = {
+  title: 'SSB - Home',
+  description: 'SSB company website built with Astro + Tailwind CSS.',
+};
+---
 <Layout metadata={metadata}>
+
   <!-- Hero Widget ******************* -->
 
 <Hero
@@ -401,4 +408,3 @@ icon: 'tabler',
 </Fragment>
 
   </CallToAction>
-</Layout>
